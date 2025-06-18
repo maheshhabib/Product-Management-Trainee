@@ -1,28 +1,25 @@
-# Problem 2: Kubernetes Security Scan
+# Problem 1: Product Requirement and Wireframes
 
-## Tools Used
-- Minikube
-- Kubescape
+## Product Title
+Container Image Vulnerability Scanner
 
-## Instructions
+## Problem Statement
+Users need to monitor thousands of container images for known vulnerabilities and prioritize fixes based on severity.
 
-### Step 1: Install Minikube
-```bash
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-sudo install minikube-linux-amd64 /usr/local/bin/minikube
-minikube start
-```
+## Key Features
+- Dashboard for image vulnerability overview
+- Filters for severity levels
+- Sorting and search options
+- Remediation suggestions
+- Export capability
 
-### Step 2: Deploy Sample App
-```bash
-kubectl create deployment nginx --image=nginx
-kubectl expose deployment nginx --port=80 --type=NodePort
-```
+## Wireframe Descriptions
+- **Dashboard**: Lists images with vulnerability summary
+- **Detail Page**: Shows individual vulnerabilities with fix options
+- **Navigation**: Simple top bar navigation
 
-### Step 3: Run Kubescape Scan
-```bash
-curl -s https://raw.githubusercontent.com/kubescape/kubescape/master/install.sh | /bin/bash
-kubescape scan framework nsa --format json --output results.json
-```
+## Development Action Items
+- API, UI, DB schema and scheduling for automated scans
+- Role-based access control
 
-> Submit the `results.json` file.
+> Low-fidelity wireframes can be added as images or Figma links.
